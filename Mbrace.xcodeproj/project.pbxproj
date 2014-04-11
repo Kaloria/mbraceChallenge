@@ -27,6 +27,8 @@
 		F2B8F33B18F8560B00E849D6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B8F33918F8560B00E849D6 /* Main_iPhone.storyboard */; };
 		F2B8F33D18F8561C00E849D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B8F33C18F8561C00E849D6 /* CoreData.framework */; };
 		F2B8F34018F8564F00E849D6 /* Mbrace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2B8F33E18F8564F00E849D6 /* Mbrace.xcdatamodeld */; };
+		F2B8F34418F85D0200E849D6 /* MPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B8F34318F85D0200E849D6 /* MPDetailViewController.m */; };
+		F2B8F34818F85F4E00E849D6 /* MPDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B8F34718F85F4E00E849D6 /* MPDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		F2B8F33A18F8560B00E849D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		F2B8F33C18F8561C00E849D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F2B8F33F18F8564F00E849D6 /* Mbrace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mbrace.xcdatamodel; sourceTree = "<group>"; };
+		F2B8F34218F85D0200E849D6 /* MPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDetailViewController.h; sourceTree = "<group>"; };
+		F2B8F34318F85D0200E849D6 /* MPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDetailViewController.m; sourceTree = "<group>"; };
+		F2B8F34618F85F4E00E849D6 /* MPDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDetailView.h; sourceTree = "<group>"; };
+		F2B8F34718F85F4E00E849D6 /* MPDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 		F2B8F32A18F855F700E849D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2B8F34118F85CEE00E849D6 /* Detail */,
 				F2B8F32B18F855F700E849D6 /* Commons */,
 				F2B8F32E18F855F700E849D6 /* Main */,
 			);
@@ -247,6 +254,25 @@
 				F2B8F33118F855F700E849D6 /* MPNoteCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2B8F34118F85CEE00E849D6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F2B8F34518F85F3E00E849D6 /* View */,
+				F2B8F34218F85D0200E849D6 /* MPDetailViewController.h */,
+				F2B8F34318F85D0200E849D6 /* MPDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F2B8F34518F85F3E00E849D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2B8F34618F85F4E00E849D6 /* MPDetailView.h */,
+				F2B8F34718F85F4E00E849D6 /* MPDetailView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,11 +375,13 @@
 			files = (
 				F2B8F34018F8564F00E849D6 /* Mbrace.xcdatamodeld in Sources */,
 				F2B8F2F918F855B500E849D6 /* main.m in Sources */,
+				F2B8F34418F85D0200E849D6 /* MPDetailViewController.m in Sources */,
 				F2B8F33718F855F700E849D6 /* MPNoteCell.m in Sources */,
 				F2B8F33518F855F700E849D6 /* MPNote.m in Sources */,
 				F2B8F33818F855F700E849D6 /* MPViewController.m in Sources */,
 				F2B8F33618F855F700E849D6 /* MPBaseViewController.m in Sources */,
 				F2B8F2FD18F855B500E849D6 /* MPAppDelegate.m in Sources */,
+				F2B8F34818F85F4E00E849D6 /* MPDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

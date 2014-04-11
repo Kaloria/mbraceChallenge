@@ -11,7 +11,8 @@
 @interface MPViewController : MPBaseViewController <
     UITableViewDataSource,
     UITableViewDelegate,
-    NSFetchedResultsControllerDelegate>
+    NSFetchedResultsControllerDelegate
+>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 

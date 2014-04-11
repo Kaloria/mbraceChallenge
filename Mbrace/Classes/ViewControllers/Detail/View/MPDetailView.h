@@ -1,6 +1,6 @@
 //
-//  MPNoteCell.h
-//  MbraceChallenge
+//  MPDetailView.h
+//  Mbrace
 //
 //  Created by Dom-Mac on 11.04.2014.
 //
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MPNoteCell : UITableViewCell
+@interface MPDetailView : UIView
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
-@property (weak, nonatomic) IBOutlet UILabel *noteId;
+
 @end

@@ -18,11 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+   //In order to load notes in background tread
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
+    __block MPAppDelegate *blockSelf = self;
+    
     dispatch_async(queue, ^{
-        [self loadNotes];
+        [blockSelf loadNotes];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             UINavigationController *navigationViewController = (UINavigationController *)self.window.rootViewController;

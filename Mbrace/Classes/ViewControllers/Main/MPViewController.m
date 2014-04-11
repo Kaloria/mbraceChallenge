@@ -9,6 +9,7 @@
 #import "MPViewController.h"
 #import "MPNoteCell.h"
 #import "MPNote.h"
+#import "MPDetailViewController.h"
 
 @implementation MPViewController
 
@@ -39,6 +40,18 @@
     return cell;
 }
 
+#pragma mark - Segue methods
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailSeque"]) {
+        MPDetailViewController *detailViewController = (MPDetailViewController *)[segue destinationViewController];
+        MPNoteCell *selectedCell = (MPNoteCell *)sender; //TODO: fix that
+        MPNote *note = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:selectedCell]];
+        detailViewController.note = note;
+    }
+}
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -53,7 +66,7 @@
     [fetchRequest setEntity:entity];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"noteId" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"noteId" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -77,16 +90,20 @@
     
     if ([note.text length] > 0) {
         cell.noteTextView.text = note.text;
+        cell.noteTextView.textColor = [UIColor blackColor];
     } else {
         cell.noteTextView.text = NSLocalizedString(@"EMPTY_NOTE", nil);
         cell.noteTextView.textColor = [UIColor redColor];
     }
+    
+    cell.noteId.text = [NSString stringWithFormat:@"%@", note.noteId];
 }
 
 #pragma mark -
 
 - (void)reloadMainTableView
 {
+    //TODO: refresh 
     [self.tableView reloadData];
 }
 
